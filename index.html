@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Vote</title>
+</head>
+
+<body>
+
+    <form action="">
+
+        <label for="thomas">Thomas</label>
+        <input type="radio" name="vote" id="thomas">
+
+        <label for="julien">Julien</label>
+        <input type="radio" name="vote" id="julien">
+
+        <label for="charlotte">Charlotte</label>
+        <input type="radio" name="vote" id="charlotte">
+
+    </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $("input[name=vote]").change(function () {
+                console.log("input change")
+                console.log(this.value)
+            })
+        })
+    </script>
+
+</body>
+
+</html>

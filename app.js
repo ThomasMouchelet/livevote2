@@ -20,8 +20,7 @@ io.on('connection', function (socket) {
         vote[data]++
         io.emit("updateVote", vote)
     })
-
-
 })
+
 
 http.listen(3000)

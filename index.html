@@ -22,6 +22,8 @@
 
     </form>
 
+    <ul id="votes"></ul>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
@@ -37,6 +39,16 @@
 
             socket.on("updateVote", function (data) {
                 console.log(data)
+
+                $("#votes").html("")
+                Object.keys(data).map((key, value) => {
+                    $("#votes").append(`
+                        <li>
+                            <strong>${key}</strong>
+                            ${data[key]}
+                        </li>
+                    `)
+                })
             })
         })
     </script>

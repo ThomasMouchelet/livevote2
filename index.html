@@ -12,20 +12,23 @@
     <form action="">
 
         <label for="thomas">Thomas</label>
-        <input type="radio" name="vote" id="thomas">
+        <input type="radio" name="vote" id="thomas" value="thomas">
 
         <label for="julien">Julien</label>
-        <input type="radio" name="vote" id="julien">
+        <input type="radio" name="vote" id="julien" value="julien">
 
         <label for="charlotte">Charlotte</label>
-        <input type="radio" name="vote" id="charlotte">
+        <input type="radio" name="vote" id="charlotte" value="charlotte">
 
     </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
 
     <script>
         $(function () {
+            var socket = io();
+
             $("input[name=vote]").change(function () {
                 console.log("input change")
                 console.log(this.value)

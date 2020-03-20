@@ -32,6 +32,11 @@
             $("input[name=vote]").change(function () {
                 console.log("input change")
                 console.log(this.value)
+                socket.emit("vote", this.value)
+            })
+
+            socket.on("updateVote", function (data) {
+                console.log(data)
             })
         })
     </script>
